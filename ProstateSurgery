@@ -1,0 +1,19 @@
+{
+   "resourceType":"Questionnaire",
+   "meta":{
+      "profile":[
+         "http://hl7.org/fhir/StructureDefinition/cqf-questionnaire"
+      ]
+   },
+   "extension":[
+      {
+         "url":"http://hl7.org/fhir/StructureDefinition/cqf-library",
+         "valueCanonical":"library/testosterone"
+      }
+   ],
+   "url":"https://www.hl7.org/fhir/Questionnaire/TestosteroneHypogonadismPriorAuth",
+   "id":"OptumRxTestosteroneHypogonadismPriorAuth",
+   "name":"TestosteroneHypogonadismPriorAuth",
+   "title":"Testosterone Prior Authorization for Hypogonadism",
+   "status":"draft",
+   "date":"2019-11-24T13:20:00+00:00",
