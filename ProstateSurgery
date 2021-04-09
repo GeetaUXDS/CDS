@@ -1,9 +1,20 @@
 library CDSProstateSurgery version '0.0.1'
 using FHIR version '4.0.1'
 
+var QUESTIONNAIRE = {
+  "resourceType": "Questionnaire",
+  "url": "https://www.hl7.org/fhir/questionnaire.html",
+  "name": "CDS Prostate Surgery Medical Policy",
+  "title": "CDS Prostate Surgery Medical Policy",
+  "identifier": {
+    "use": "temp",
+    "type": {
+      "value": "CDSProstateSurgery.Questionnaire"
+    }
+    
 include FHIRHelpers version '4.0.1' called FHIRHelpers
 {
-   "resourceType":"ProstateQuestionnaire",
+   "resourceType":"CDSProstateSurgery.Questionnaire",
    "meta":{
       "profile":[
          "http://hl7.org/fhir/StructureDefinition/cqf-questionnaire"
@@ -15,17 +26,25 @@ include FHIRHelpers version '4.0.1' called FHIRHelpers
          "valueCanonical":"library/prostate"
       }
    ],
+   *** BPH Question ***
+      "url": "http://terminology.hl7.org/CodeSystem/ex-diagnosistype"
+      codesystem "ICD-10": 'http://hl7.org/fhir/sid/icd-10' // 'urn:oid:2.16.840.1.113883.6.90'
    "Procedure.reasonReference":"Benign Prostatic Hyperblasmia"
    "url":"https://www.hl7.org/fhir/Questionnaire/ProstateSurgery",
-   "id":"OptumRxTestosteroneHypogonadismPriorAuth",
-   "name":"",
+   "id":"CDSProstateSurgery",
+   "name":"BPH",
    "title":"Medical Policy for Prostate Surgery",
    "status":"draft",
    "date":"_lastUpdated",
    
    {
    "profile":[
+   <coding>
     <system value="http://hl7.org/fhir/sid/icd-10"/>
-    <code value="N40.0/>
+    <code value="N40.1/>
   </coding>
+  
+  ***Interqual Question***
+  
+  
    
